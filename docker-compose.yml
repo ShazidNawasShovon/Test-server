@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  # The application
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_container
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$DB_USER
+      - MONGO_INITDB_ROOT_PASSWORD=$DB_PASSWORD
+    ports:
+      - $DB_PORT:$DB_PORT
+    volumes:
+      - db:/data/db
+    command: mongod --quiet --logpath /dev/null 
+
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $PORT:$PORT
+    environment:
+      - DB_HOST=mongodb
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_NAME=$DB_NAME
+      - DB_PORT=$DB_PORT
+    volumes:
+      - .:/opt/app
+    depends_on:
+      - mongodb
+volumes:
+  db:
+
+networks:
+  mongo_network:
+    driver: bridge

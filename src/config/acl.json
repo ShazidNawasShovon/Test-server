@@ -1,0 +1,50 @@
+{
+  "admin": {
+    "signup": ["*"],
+    "reset-password": ["*"],
+    "users": ["*"],
+    "categories": ["*"],
+    "products": ["*"],
+    "subproducts": ["*"],
+    "orders": ["*"],
+    "coupons": ["*"],
+    "banners": ["*"],
+    "attributes": ["*"]
+  },
+  "wholesaler": {
+    "signup": ["*"],
+    "reset-password": ["*"],
+    "users": ["post", "GET", "PUT"],
+    "categories": ["post", "GET", "PUT"],
+    "products": ["post", "GET", "PUT"],
+    "subproducts": ["post", "GET", "PUT"],
+    "orders": ["post", "GET", "PUT"],
+    "coupons": ["post", "GET", "PUT"],
+    "banners": ["post", "GET", "PUT"],
+    "attributes": ["post", "GET", "PUT"]
+  },
+  "customer": {
+    "signup": ["*"],
+    "reset-password": ["*"],
+    "users": ["post", "GET", "PUT"],
+    "categories": ["post", "GET", "PUT"],
+    "products": ["post", "GET", "PUT"],
+    "subproducts": ["post", "GET", "PUT"],
+    "orders": ["post", "GET", "PUT"],
+    "coupons": ["post", "GET", "PUT"],
+    "banners": ["post", "GET", "PUT"],
+    "attributes": ["post", "GET", "PUT"]
+  },
+  "employee": {
+    "signup": ["*"],
+    "reset-password": ["*"],
+    "users": ["post", "GET", "PUT"],
+    "categories": ["post", "GET", "PUT"],
+    "products": ["post", "GET", "PUT"],
+    "subproducts": ["post", "GET", "PUT"],
+    "orders": ["post", "GET", "PUT"],
+    "coupons": ["post", "GET", "PUT"],
+    "banners": ["post", "GET", "PUT"],
+    "attributes": ["post", "GET", "PUT"]
+  }
+}
